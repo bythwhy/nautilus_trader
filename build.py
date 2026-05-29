@@ -598,6 +598,7 @@ def build() -> None:
         if PARALLEL_BUILD:
             cmd.parallel = os.cpu_count()
         cmd.ensure_finalized()
+        cmd.parallel = False
         cmd.run()
 
         if COPY_TO_SOURCE:
